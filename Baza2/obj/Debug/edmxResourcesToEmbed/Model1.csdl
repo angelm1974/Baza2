@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="Model1" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+  <EntityContainer Name="Model1Container" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="czlowiekSet" EntityType="Model1.czlowiekSet" />
+    <EntitySet Name="czlowiekSet_bibliotekarz" EntityType="Model1.czlowiekSet_bibliotekarz" />
+    <EntitySet Name="czlowiekSet_czytelnik" EntityType="Model1.czlowiekSet_czytelnik" />
+    <EntitySet Name="ksiazkaSet" EntityType="Model1.ksiazkaSet" />
+    <EntitySet Name="wypozyczenieSet" EntityType="Model1.wypozyczenieSet" />
+    <AssociationSet Name="FK_bibliotekarz_inherits_czlowiek" Association="Model1.FK_bibliotekarz_inherits_czlowiek">
+      <End Role="czlowiekSet" EntitySet="czlowiekSet" />
+      <End Role="czlowiekSet_bibliotekarz" EntitySet="czlowiekSet_bibliotekarz" />
+    </AssociationSet>
+    <AssociationSet Name="FK_czytelnik_inherits_czlowiek" Association="Model1.FK_czytelnik_inherits_czlowiek">
+      <End Role="czlowiekSet" EntitySet="czlowiekSet" />
+      <End Role="czlowiekSet_czytelnik" EntitySet="czlowiekSet_czytelnik" />
+    </AssociationSet>
+    <AssociationSet Name="FK_bibliotekarzwypozyczenie" Association="Model1.FK_bibliotekarzwypozyczenie">
+      <End Role="wypozyczenieSet" EntitySet="wypozyczenieSet" />
+      <End Role="czlowiekSet_bibliotekarz" EntitySet="czlowiekSet_bibliotekarz" />
+    </AssociationSet>
+    <AssociationSet Name="FK_czytelnikwypozyczenie" Association="Model1.FK_czytelnikwypozyczenie">
+      <End Role="czlowiekSet_czytelnik" EntitySet="czlowiekSet_czytelnik" />
+      <End Role="wypozyczenieSet" EntitySet="wypozyczenieSet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ksiazkawypozyczenie" Association="Model1.FK_ksiazkawypozyczenie">
+      <End Role="ksiazkaSet" EntitySet="ksiazkaSet" />
+      <End Role="wypozyczenieSet" EntitySet="wypozyczenieSet" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="czlowiekSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="imie" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="nazwisko" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="wiek" Type="Int16" Nullable="false" />
+    <NavigationProperty Name="czlowiekSet_bibliotekarz" Relationship="Model1.FK_bibliotekarz_inherits_czlowiek" FromRole="czlowiekSet" ToRole="czlowiekSet_bibliotekarz" />
+    <NavigationProperty Name="czlowiekSet_czytelnik" Relationship="Model1.FK_czytelnik_inherits_czlowiek" FromRole="czlowiekSet" ToRole="czlowiekSet_czytelnik" />
+  </EntityType>
+  <EntityType Name="czlowiekSet_bibliotekarz">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="IdB" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="stazPracy" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="wypozyczenie_Id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="czlowiekSet" Relationship="Model1.FK_bibliotekarz_inherits_czlowiek" FromRole="czlowiekSet_bibliotekarz" ToRole="czlowiekSet" />
+    <NavigationProperty Name="wypozyczenieSet" Relationship="Model1.FK_bibliotekarzwypozyczenie" FromRole="czlowiekSet_bibliotekarz" ToRole="wypozyczenieSet" />
+  </EntityType>
+  <EntityType Name="czlowiekSet_czytelnik">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="IdC" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="iloscksiazek" Type="Int32" />
+    <NavigationProperty Name="czlowiekSet" Relationship="Model1.FK_czytelnik_inherits_czlowiek" FromRole="czlowiekSet_czytelnik" ToRole="czlowiekSet" />
+    <NavigationProperty Name="wypozyczenieSet" Relationship="Model1.FK_czytelnikwypozyczenie" FromRole="czlowiekSet_czytelnik" ToRole="wypozyczenieSet" />
+  </EntityType>
+  <EntityType Name="ksiazkaSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="tytul" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="autor" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="wydanie" Type="Int16" Nullable="false" />
+    <Property Name="wydawca" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="wypozyczenieSet" Relationship="Model1.FK_ksiazkawypozyczenie" FromRole="ksiazkaSet" ToRole="wypozyczenieSet" />
+  </EntityType>
+  <EntityType Name="wypozyczenieSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="dataWypozyczenia" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="dataZwrotu" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ksiazka_Id" Type="Int32" Nullable="false" />
+    <Property Name="czytelnik_Id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="czlowiekSet_bibliotekarz" Relationship="Model1.FK_bibliotekarzwypozyczenie" FromRole="wypozyczenieSet" ToRole="czlowiekSet_bibliotekarz" />
+    <NavigationProperty Name="czlowiekSet_czytelnik" Relationship="Model1.FK_czytelnikwypozyczenie" FromRole="wypozyczenieSet" ToRole="czlowiekSet_czytelnik" />
+    <NavigationProperty Name="ksiazkaSet" Relationship="Model1.FK_ksiazkawypozyczenie" FromRole="wypozyczenieSet" ToRole="ksiazkaSet" />
+  </EntityType>
+  <Association Name="FK_bibliotekarz_inherits_czlowiek">
+    <End Type="Model1.czlowiekSet" Role="czlowiekSet" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="Model1.czlowiekSet_bibliotekarz" Role="czlowiekSet_bibliotekarz" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="czlowiekSet">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="czlowiekSet_bibliotekarz">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_czytelnik_inherits_czlowiek">
+    <End Type="Model1.czlowiekSet" Role="czlowiekSet" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="Model1.czlowiekSet_czytelnik" Role="czlowiekSet_czytelnik" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="czlowiekSet">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="czlowiekSet_czytelnik">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_bibliotekarzwypozyczenie">
+    <End Type="Model1.wypozyczenieSet" Role="wypozyczenieSet" Multiplicity="1" />
+    <End Type="Model1.czlowiekSet_bibliotekarz" Role="czlowiekSet_bibliotekarz" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="wypozyczenieSet">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="czlowiekSet_bibliotekarz">
+        <PropertyRef Name="wypozyczenie_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_czytelnikwypozyczenie">
+    <End Type="Model1.czlowiekSet_czytelnik" Role="czlowiekSet_czytelnik" Multiplicity="1" />
+    <End Type="Model1.wypozyczenieSet" Role="wypozyczenieSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="czlowiekSet_czytelnik">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="wypozyczenieSet">
+        <PropertyRef Name="czytelnik_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ksiazkawypozyczenie">
+    <End Type="Model1.ksiazkaSet" Role="ksiazkaSet" Multiplicity="1" />
+    <End Type="Model1.wypozyczenieSet" Role="wypozyczenieSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ksiazkaSet">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="wypozyczenieSet">
+        <PropertyRef Name="ksiazka_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
