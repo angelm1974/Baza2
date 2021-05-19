@@ -18,11 +18,12 @@ namespace Baza2
             PobierzDane();
         }
 
-        Model1Container dane = new Model1Container();
+        Model1Container dane;
         
         private void PobierzDane()
         {
-            
+            dane = new Model1Container();
+
             ksiazkaSetBindingSource.DataSource = dane.ksiazkaSet.ToList();
             
         }

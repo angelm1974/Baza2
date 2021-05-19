@@ -31,27 +31,28 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmListaLudzi));
             this.czlowiekSetDataGridView = new System.Windows.Forms.DataGridView();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btnNowy = new System.Windows.Forms.Button();
-            this.btnEdytuj = new System.Windows.Forms.Button();
-            this.btnUsun = new System.Windows.Forms.Button();
-            this.btnZamknij = new System.Windows.Forms.Button();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.czlowiekSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnZamknij = new System.Windows.Forms.Button();
+            this.btnUsun = new System.Windows.Forms.Button();
+            this.btnNowy = new System.Windows.Forms.Button();
+            this.btnEdytuj = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.czlowiekSetDataGridView)).BeginInit();
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.czlowiekSetBindingSource)).BeginInit();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // czlowiekSetDataGridView
             // 
-            this.czlowiekSetDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.czlowiekSetDataGridView.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.czlowiekSetDataGridView.AutoGenerateColumns = false;
             this.czlowiekSetDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.czlowiekSetDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -60,81 +61,10 @@
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4});
             this.czlowiekSetDataGridView.DataSource = this.czlowiekSetBindingSource;
-            this.czlowiekSetDataGridView.Location = new System.Drawing.Point(12, 12);
+            this.czlowiekSetDataGridView.Location = new System.Drawing.Point(12, 77);
             this.czlowiekSetDataGridView.Name = "czlowiekSetDataGridView";
-            this.czlowiekSetDataGridView.Size = new System.Drawing.Size(529, 261);
+            this.czlowiekSetDataGridView.Size = new System.Drawing.Size(716, 322);
             this.czlowiekSetDataGridView.TabIndex = 1;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.LightGreen;
-            this.panel1.Controls.Add(this.btnZamknij);
-            this.panel1.Controls.Add(this.btnUsun);
-            this.panel1.Controls.Add(this.btnNowy);
-            this.panel1.Controls.Add(this.btnEdytuj);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 290);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(560, 62);
-            this.panel1.TabIndex = 12;
-            // 
-            // btnNowy
-            // 
-            this.btnNowy.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnNowy.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNowy.ImageKey = "023-simulation.png";
-            this.btnNowy.ImageList = this.imageList1;
-            this.btnNowy.Location = new System.Drawing.Point(10, 21);
-            this.btnNowy.Name = "btnNowy";
-            this.btnNowy.Padding = new System.Windows.Forms.Padding(0, 0, 8, 0);
-            this.btnNowy.Size = new System.Drawing.Size(81, 29);
-            this.btnNowy.TabIndex = 1;
-            this.btnNowy.Text = "&Nowy";
-            this.btnNowy.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnNowy.UseVisualStyleBackColor = true;
-            this.btnNowy.Click += new System.EventHandler(this.btnNowy_Click);
-            // 
-            // btnEdytuj
-            // 
-            this.btnEdytuj.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnEdytuj.Image = ((System.Drawing.Image)(resources.GetObject("btnEdytuj.Image")));
-            this.btnEdytuj.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEdytuj.Location = new System.Drawing.Point(97, 21);
-            this.btnEdytuj.Name = "btnEdytuj";
-            this.btnEdytuj.Padding = new System.Windows.Forms.Padding(0, 0, 8, 0);
-            this.btnEdytuj.Size = new System.Drawing.Size(75, 29);
-            this.btnEdytuj.TabIndex = 0;
-            this.btnEdytuj.Text = "&Edytuj";
-            this.btnEdytuj.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnEdytuj.UseVisualStyleBackColor = true;
-            // 
-            // btnUsun
-            // 
-            this.btnUsun.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnUsun.Image = ((System.Drawing.Image)(resources.GetObject("btnUsun.Image")));
-            this.btnUsun.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUsun.Location = new System.Drawing.Point(178, 21);
-            this.btnUsun.Name = "btnUsun";
-            this.btnUsun.Padding = new System.Windows.Forms.Padding(0, 0, 8, 0);
-            this.btnUsun.Size = new System.Drawing.Size(75, 29);
-            this.btnUsun.TabIndex = 2;
-            this.btnUsun.Text = "&Usuń";
-            this.btnUsun.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnUsun.UseVisualStyleBackColor = true;
-            // 
-            // btnZamknij
-            // 
-            this.btnZamknij.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnZamknij.Image = ((System.Drawing.Image)(resources.GetObject("btnZamknij.Image")));
-            this.btnZamknij.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnZamknij.Location = new System.Drawing.Point(466, 21);
-            this.btnZamknij.Name = "btnZamknij";
-            this.btnZamknij.Padding = new System.Windows.Forms.Padding(0, 0, 8, 0);
-            this.btnZamknij.Size = new System.Drawing.Size(75, 29);
-            this.btnZamknij.TabIndex = 3;
-            this.btnZamknij.Text = "&Zamknij";
-            this.btnZamknij.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnZamknij.UseVisualStyleBackColor = true;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -175,49 +105,125 @@
             // 
             this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList1.Images.SetKeyName(0, "001-algorithm.png");
-            this.imageList1.Images.SetKeyName(1, "002-analysis.png");
-            this.imageList1.Images.SetKeyName(2, "003-applications.png");
-            this.imageList1.Images.SetKeyName(3, "004-authorize.png");
-            this.imageList1.Images.SetKeyName(4, "005-binary-code.png");
-            this.imageList1.Images.SetKeyName(5, "006-browser.png");
-            this.imageList1.Images.SetKeyName(6, "007-code.png");
-            this.imageList1.Images.SetKeyName(7, "008-cyberspace.png");
-            this.imageList1.Images.SetKeyName(8, "009-bug.png");
-            this.imageList1.Images.SetKeyName(9, "010-developer.png");
-            this.imageList1.Images.SetKeyName(10, "011-code-1.png");
-            this.imageList1.Images.SetKeyName(11, "012-error.png");
-            this.imageList1.Images.SetKeyName(12, "013-hacker.png");
-            this.imageList1.Images.SetKeyName(13, "014-hosting.png");
-            this.imageList1.Images.SetKeyName(14, "015-code-2.png");
-            this.imageList1.Images.SetKeyName(15, "016-machine.png");
-            this.imageList1.Images.SetKeyName(16, "017-programmer.png");
-            this.imageList1.Images.SetKeyName(17, "018-programming.png");
-            this.imageList1.Images.SetKeyName(18, "019-responsive.png");
-            this.imageList1.Images.SetKeyName(19, "020-script.png");
-            this.imageList1.Images.SetKeyName(20, "021-search-engine.png");
-            this.imageList1.Images.SetKeyName(21, "022-server.png");
-            this.imageList1.Images.SetKeyName(22, "023-simulation.png");
-            this.imageList1.Images.SetKeyName(23, "024-operating-system.png");
-            this.imageList1.Images.SetKeyName(24, "025-software.png");
-            this.imageList1.Images.SetKeyName(25, "026-structure.png");
-            this.imageList1.Images.SetKeyName(26, "027-web-design.png");
-            this.imageList1.Images.SetKeyName(27, "028-website.png");
-            this.imageList1.Images.SetKeyName(28, "029-website-1.png");
-            this.imageList1.Images.SetKeyName(29, "030-programming-1.png");
+            this.imageList1.Images.SetKeyName(0, "document_add24.png");
+            this.imageList1.Images.SetKeyName(1, "document_delete24.png");
+            this.imageList1.Images.SetKeyName(2, "document_edit.png");
+            this.imageList1.Images.SetKeyName(3, "document_info24.png");
+            this.imageList1.Images.SetKeyName(4, "close_up_mode-24.png");
+            this.imageList1.Images.SetKeyName(5, "lock-24.png");
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.LightGreen;
+            this.panel1.Controls.Add(this.btnZamknij);
+            this.panel1.Controls.Add(this.btnUsun);
+            this.panel1.Controls.Add(this.btnNowy);
+            this.panel1.Controls.Add(this.btnEdytuj);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(0, 416);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(740, 62);
+            this.panel1.TabIndex = 14;
+            // 
+            // btnZamknij
+            // 
+            this.btnZamknij.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnZamknij.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnZamknij.ImageIndex = 5;
+            this.btnZamknij.ImageList = this.imageList1;
+            this.btnZamknij.Location = new System.Drawing.Point(641, 15);
+            this.btnZamknij.Name = "btnZamknij";
+            this.btnZamknij.Padding = new System.Windows.Forms.Padding(0, 0, 8, 0);
+            this.btnZamknij.Size = new System.Drawing.Size(87, 35);
+            this.btnZamknij.TabIndex = 3;
+            this.btnZamknij.Text = "&Zamknij";
+            this.btnZamknij.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnZamknij.UseVisualStyleBackColor = true;
+            this.btnZamknij.Click += new System.EventHandler(this.btnZamknij_Click);
+            // 
+            // btnUsun
+            // 
+            this.btnUsun.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnUsun.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnUsun.ImageIndex = 1;
+            this.btnUsun.ImageList = this.imageList1;
+            this.btnUsun.Location = new System.Drawing.Point(198, 15);
+            this.btnUsun.Name = "btnUsun";
+            this.btnUsun.Padding = new System.Windows.Forms.Padding(0, 0, 8, 0);
+            this.btnUsun.Size = new System.Drawing.Size(87, 35);
+            this.btnUsun.TabIndex = 2;
+            this.btnUsun.Text = "&Usuń";
+            this.btnUsun.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnUsun.UseVisualStyleBackColor = true;
+            this.btnUsun.Click += new System.EventHandler(this.btnUsun_Click);
+            // 
+            // btnNowy
+            // 
+            this.btnNowy.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnNowy.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNowy.ImageIndex = 0;
+            this.btnNowy.ImageList = this.imageList1;
+            this.btnNowy.Location = new System.Drawing.Point(12, 15);
+            this.btnNowy.Name = "btnNowy";
+            this.btnNowy.Padding = new System.Windows.Forms.Padding(0, 0, 8, 0);
+            this.btnNowy.Size = new System.Drawing.Size(87, 35);
+            this.btnNowy.TabIndex = 1;
+            this.btnNowy.Text = "&Nowy";
+            this.btnNowy.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnNowy.UseVisualStyleBackColor = true;
+            this.btnNowy.Click += new System.EventHandler(this.btnNowy_Click);
+            // 
+            // btnEdytuj
+            // 
+            this.btnEdytuj.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnEdytuj.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEdytuj.ImageIndex = 2;
+            this.btnEdytuj.ImageList = this.imageList1;
+            this.btnEdytuj.Location = new System.Drawing.Point(105, 15);
+            this.btnEdytuj.Name = "btnEdytuj";
+            this.btnEdytuj.Padding = new System.Windows.Forms.Padding(0, 0, 8, 0);
+            this.btnEdytuj.Size = new System.Drawing.Size(87, 35);
+            this.btnEdytuj.TabIndex = 0;
+            this.btnEdytuj.Text = "&Edytuj";
+            this.btnEdytuj.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnEdytuj.UseVisualStyleBackColor = true;
+            this.btnEdytuj.Click += new System.EventHandler(this.btnEdytuj_Click);
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.LightGreen;
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(740, 62);
+            this.panel2.TabIndex = 15;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label1.Location = new System.Drawing.Point(22, 19);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(113, 29);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Lista osób";
             // 
             // frmListaLudzi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(560, 352);
+            this.ClientSize = new System.Drawing.Size(740, 478);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.czlowiekSetDataGridView);
             this.Name = "frmListaLudzi";
             this.Text = "Lista osób";
             ((System.ComponentModel.ISupportInitialize)(this.czlowiekSetDataGridView)).EndInit();
-            this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.czlowiekSetBindingSource)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -230,11 +236,13 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnZamknij;
         private System.Windows.Forms.Button btnUsun;
         private System.Windows.Forms.Button btnNowy;
         private System.Windows.Forms.Button btnEdytuj;
-        private System.Windows.Forms.ImageList imageList1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label1;
     }
 }
